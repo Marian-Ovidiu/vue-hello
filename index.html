@@ -3,12 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+    .box {
+      width: 600px;
+      height: 40px;
+      display: flex;
+
+    }
+    </style>
   </head>
   <body>
 
     <div id="root">
 
       <h1>{{sciao}}</h1>
+      <p>Si o no e premi invio</p>
+      <input @keyup.enter ="siONo" value="">
+
+      <br><br>
+
+      <div :class="contenitore">
+        <p>Altezza</p>
+        <input v-model="altezza">
+        <p>Lunghezza</p>
+        <input v-model="lunghezza">
+        <p>Colore Sfondo</p>
+        <input v-model="coloreSfondo">
+        <p>Colore scritta</p>
+        <input v-model="coloreScritta">
+        <p>Bordi</p>
+        <input v-model="bordi">
+        <p>Testo interno</p>
+        <input v-model="testo">
+      </div>
+
+      <div :style="'height:' + altezza + '; width: ' + lunghezza + '; background-color: ' + coloreSfondo + '; border: ' + bordi + '; border-radius: ' + arrodondamento + '; color: ' + coloreScritta + ';'">
+        {{testo}}
+      </div>
 
 
     </div>
